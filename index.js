@@ -1,11 +1,8 @@
 import express from "express";
 import cors from "cors";
 import admin from "firebase-admin";
-import fs from "fs";
 
-const serviceAccount = JSON.parse(
-  fs.readFileSync("./serviceAccountKey.json", "utf-8")
-);
+const serviceAccount = JSON.parse(process.env.FIREBASE_CONFIG);
 
 const app = express();
 app.use(cors());
